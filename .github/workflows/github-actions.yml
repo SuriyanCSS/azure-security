@@ -1,5 +1,7 @@
 name: build
-on: [push]
+on: 
+  schedule:
+    - cron: "*/2 * * * *"
 jobs:
   build:
     name: Build
@@ -11,7 +13,7 @@ jobs:
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@master
         with:
-          image-ref: 'suriyancss/azure-test:latest, suriyancss/azure-test:ubuntu'
+          image-ref: 'suriyancss/azure-test:latest'
           format: 'table'
 #          output: 'trivy-results.sarif'
         env:
