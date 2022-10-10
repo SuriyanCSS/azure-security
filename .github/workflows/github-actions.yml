@@ -33,7 +33,7 @@ jobs:
       - name: Upload file to container
         uses: LanceMcCarthy/Action-AzureBlobUpload@v2
         with:
-          connection_string: DefaultEndpointsProtocol=https;AccountName=teststoragesuriyan123;AccountKey=lfqgqePwUq7HmP1pFYExeib50koilCS/Z3+lMzUTIHtA/qqUCtrMHRuagjA5AdnUMCMoXZum5WG7+ASt15RRHw==;EndpointSuffix=core.windows.net
+          connection_string: DefaultEndpointsProtocol=https;AccountName=teststroragesuriyan123;AccountKey=jJw40Ppv6EyKDqF0PsoL+R+b3IhjnHAwB5VOrPh4zqNVLQf1Hu/cvafopw+ZLkPu8tIbIZQxb2IM+ASt13QVsQ==;EndpointSuffix=core.windows.net
           container_name: testcontainer123
           source_folder: trivy-results.sarif
           destination_folder: scanresults123
