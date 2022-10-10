@@ -25,7 +25,7 @@ jobs:
           TRIVY_USERNAME: 'suriyancss'
           TRIVY_PASSWORD: 'welcome@123'
           
-#      - name: Upload Trivy scan results to GitHub Security
+#      - name: Upload Trivy scan results to GitHub Security tab
 #        uses: github/codeql-action/upload-sarif@v2
 #        with:
 #          sarif_file: 'trivy-results.sarif'
