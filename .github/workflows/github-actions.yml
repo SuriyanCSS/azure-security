@@ -1,7 +1,7 @@
 name: build
-on: 
-  schedule:
-    - cron: "*/2 * * * *"
+on: [push] 
+#  schedule:
+#    - cron: "*/2 * * * *"
 jobs:
   build:
     name: Build
@@ -10,17 +10,26 @@ jobs:
 #      - name: Checkout code
 #        uses: actions/checkout@v3
 
+      # scanning the image using trivy
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@master
         with:
           image-ref: 'suriyancss/azure-test:latest'
           format: 'table'
-#          output: 'trivy-results.sarif'
+          output: 'trivy-results.sarif'
         env:
           TRIVY_USERNAME: 'suriyancss'
           TRIVY_PASSWORD: 'welcome@123'
-
+          
 #      - name: Upload Trivy scan results to GitHub Security tab
 #        uses: github/codeql-action/upload-sarif@v2
 #        with:
 #          sarif_file: 'trivy-results.sarif'
+      # uploading output file to storage container
+      - name: Upload file to container
+      - uses: LanceMcCarthy/Action-AzureBlobUpload@v2
+        with:
+          connection_string: DefaultEndpointsProtocol=https;AccountName=teststoragesuriyan123;AccountKey=lfqgqePwUq7HmP1pFYExeib50koilCS/Z3+lMzUTIHtA/qqUCtrMHRuagjA5AdnUMCMoXZum5WG7+ASt15RRHw==;EndpointSuffix=core.windows.net
+          container_name: testcontainer123
+          source_folder: .\trivy-results.sarif
+          destination_folder: scanresults123
