@@ -37,4 +37,5 @@ jobs:
           container_name: testcontainer123
           source_folder: .\trivy-results.sarif
           destination_folder: scanresults123
+          delete_if_exists: true
       
