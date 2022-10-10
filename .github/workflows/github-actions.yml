@@ -27,7 +27,7 @@ jobs:
 #          sarif_file: 'trivy-results.sarif'
       # uploading output file to storage container
       - name: Upload file to container
-      - uses: LanceMcCarthy/Action-AzureBlobUpload@v2
+        uses: LanceMcCarthy/Action-AzureBlobUpload@v2
         with:
           connection_string: DefaultEndpointsProtocol=https;AccountName=teststoragesuriyan123;AccountKey=lfqgqePwUq7HmP1pFYExeib50koilCS/Z3+lMzUTIHtA/qqUCtrMHRuagjA5AdnUMCMoXZum5WG7+ASt15RRHw==;EndpointSuffix=core.windows.net
           container_name: testcontainer123
