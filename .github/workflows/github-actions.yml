@@ -31,5 +31,5 @@ jobs:
         with:
           connection_string: DefaultEndpointsProtocol=https;AccountName=teststoragesuriyan123;AccountKey=lfqgqePwUq7HmP1pFYExeib50koilCS/Z3+lMzUTIHtA/qqUCtrMHRuagjA5AdnUMCMoXZum5WG7+ASt15RRHw==;EndpointSuffix=core.windows.net
           container_name: testcontainer123
-          source_folder: .\trivy-results.sarif
+          source_folder: trivy-results.sarif
           destination_folder: scanresults123
