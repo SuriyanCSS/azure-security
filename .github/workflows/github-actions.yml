@@ -8,7 +8,7 @@ on:
 jobs:
   build:
     name: Build
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     steps:
 #      - name: Checkout code
 #        uses: actions/checkout@v3
@@ -25,12 +25,13 @@ jobs:
           TRIVY_USERNAME: 'suriyancss'
           TRIVY_PASSWORD: 'welcome@123'
           
-#      - name: Upload Trivy scan results to GitHub Security
+#      - name: Upload Trivy scan results to GitHub Security tab
 #        uses: github/codeql-action/upload-sarif@v2
 #        with:
 #          sarif_file: 'trivy-results.sarif'
       # uploading output file to storage container
       - name: Upload file to container
+        if: failure()
         uses: LanceMcCarthy/Action-AzureBlobUpload@v2
         with:
           connection_string: DefaultEndpointsProtocol=https;AccountName=teststroragesuriyan123;AccountKey=jJw40Ppv6EyKDqF0PsoL+R+b3IhjnHAwB5VOrPh4zqNVLQf1Hu/cvafopw+ZLkPu8tIbIZQxb2IM+ASt13QVsQ==;EndpointSuffix=core.windows.net
