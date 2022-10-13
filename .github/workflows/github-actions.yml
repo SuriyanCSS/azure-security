@@ -15,7 +15,7 @@ jobs:
         with:
           image-ref: 'suriyancss/azure-test:ubuntu18'
           format: 'table'
-          #exit-code: '1'
+          exit-code: '1'
           output: 'trivy-results.sarif'
         env:
           TRIVY_USERNAME: 'suriyancss'
